@@ -6,7 +6,7 @@
   "description": "Returns a default configuration pojo. Overrides keys with values taken from a json file if an environment variable points to such a file.",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/OliverUv/simple-config-loader.git"
   },
   "devDependencies": {
     "tslint": "^3.15.1",
