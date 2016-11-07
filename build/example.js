@@ -1,4 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
 "use strict";
 const path = require('path');
 const _1 = require('.');

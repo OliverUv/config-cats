@@ -1,5 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-
 import * as fs from 'fs';
 import * as _ from 'lodash';
 import * as path from 'path';

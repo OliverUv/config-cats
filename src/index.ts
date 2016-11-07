@@ -1,5 +1,3 @@
-/// <reference path="../typings/index.d.ts" />
-
 // Copyright (c) <2016> <Oliver Uvman>
 // Permissions are granted in accordance with the MIT license: https://opensource.org/licenses/MIT
 
