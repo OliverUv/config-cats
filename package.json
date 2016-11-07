@@ -1,6 +1,6 @@
 {
   "name": "simple-config-loader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "description": "Returns a default configuration pojo. Overrides keys with values taken from a json file if an environment variable points to such a file.",

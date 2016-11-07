@@ -17,7 +17,7 @@ function file_exists(path) {
         return false;
     }
 }
-function load(cfg_env_var, default_fun, allow_cache = true) {
+function do_load(cfg_env_var, default_fun) {
     if (!_.has(process.env, cfg_env_var)) {
         return default_fun();
     }
@@ -41,6 +41,13 @@ function load(cfg_env_var, default_fun, allow_cache = true) {
         }
     }
     return _.defaultsDeep({}, overrides, default_fun());
+}
+let memoized_do_load = _.memoize(do_load);
+function load(cfg_env_var, default_fun, allow_cache = true) {
+    if (allow_cache) {
+        return memoized_do_load(cfg_env_var, default_fun);
+    }
+    return do_load(cfg_env_var, default_fun);
 }
 exports.load = load;
 //# sourceMappingURL=index.js.map

@@ -19,10 +19,9 @@ function file_exists(path:string):boolean {
   }
 }
 
-export function load<CfgType>(
+function do_load<CfgType>(
     cfg_env_var:string,
-    default_fun:() => CfgType,
-    allow_cache = true):CfgType|null {
+    default_fun:() => CfgType):CfgType|null {
 
   if (!_.has(process.env, cfg_env_var)) {
     return default_fun();
@@ -48,4 +47,17 @@ export function load<CfgType>(
   }
 
   return <CfgType>_.defaultsDeep({}, overrides, default_fun());
+}
+
+let memoized_do_load = _.memoize(do_load);
+
+export function load<CfgType>(
+    cfg_env_var:string,
+    default_fun:() => CfgType,
+    allow_cache = true):CfgType|null {
+
+    if (allow_cache) {
+      return memoized_do_load(cfg_env_var, default_fun);
+    }
+    return do_load(cfg_env_var, default_fun);
 }
