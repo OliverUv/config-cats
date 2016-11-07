@@ -1,0 +1,7 @@
+{
+  "host": "127.0.0.1",
+  "port": "667",
+  "username": "root",
+  "password": "hunter2",
+  "db_name": "production"
+}
