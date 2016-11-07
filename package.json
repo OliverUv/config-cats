@@ -1,12 +1,12 @@
 {
-  "name": "simple-config-loader",
+  "name": "config-cats",
   "version": "0.0.2",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "description": "Returns a default configuration pojo. Overrides keys with values taken from a json file if an environment variable points to such a file.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/OliverUv/simple-config-loader.git"
+    "url": "https://github.com/OliverUv/config-cats.git"
   },
   "devDependencies": {
     "tslint": "^3.15.1",
