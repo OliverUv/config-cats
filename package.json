@@ -1,6 +1,6 @@
 {
   "name": "config-cats",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "description": "Returns a default configuration pojo. Overrides keys with values taken from a json file if an environment variable points to such a file.",
@@ -10,8 +10,7 @@
   },
   "devDependencies": {
     "tslint": "^3.15.1",
-    "typescript": "^2.0.3",
-    "typings": "^1.5.0"
+    "typescript": "^2.0.3"
   },
   "dependencies": {
     "@types/lodash": "^4.14.38",
