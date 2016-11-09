@@ -49,7 +49,13 @@ function do_load<CfgType>(
 
 let memoized_do_load = _.memoize(do_load);
 
-export function load<CfgType>(
+interface LoadFunction {
+  <CfgType>(cfg_env_var:string,
+   default_fun:() => CfgType,
+   allow_cache?:boolean):CfgType|null;
+}
+
+let load:LoadFunction = function load<CfgType>(
     cfg_env_var:string,
     default_fun:() => CfgType,
     allow_cache = true):CfgType|null {
@@ -58,4 +64,6 @@ export function load<CfgType>(
       return memoized_do_load(cfg_env_var, default_fun);
     }
     return do_load(cfg_env_var, default_fun);
-}
+};
+
+export {LoadFunction, load};

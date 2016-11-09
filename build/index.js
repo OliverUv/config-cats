@@ -42,11 +42,11 @@ function do_load(cfg_env_var, default_fun) {
     return _.defaultsDeep({}, overrides, default_fun());
 }
 let memoized_do_load = _.memoize(do_load);
-function load(cfg_env_var, default_fun, allow_cache = true) {
+let load = function load(cfg_env_var, default_fun, allow_cache = true) {
     if (allow_cache) {
         return memoized_do_load(cfg_env_var, default_fun);
     }
     return do_load(cfg_env_var, default_fun);
-}
+};
 exports.load = load;
 //# sourceMappingURL=index.js.map
